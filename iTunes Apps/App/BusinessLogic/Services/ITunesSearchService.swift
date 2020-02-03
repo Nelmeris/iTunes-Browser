@@ -47,7 +47,6 @@ final class ITunesSearchService {
             result
                 .withValue { data in
                     do {
-                        print(try! JSONSerialization.jsonObject(with: data, options: .mutableLeaves))
                         let result = try self.decoder.decode(ITunesSearchResult<ITunesApp>.self, from: data)
                         let apps = result.results
                         completion?(.success(apps))

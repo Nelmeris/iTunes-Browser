@@ -51,6 +51,8 @@ final class SearchViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.searchView.searchBar.delegate = self
+        self.searchView.searchBar.scopeButtonTitles = ["Apps", "Music"]
+        self.searchView.searchBar.showsScopeBar = true
         self.searchView.tableView.register(AppCell.self, forCellReuseIdentifier: Constants.reuseIdentifier)
         self.searchView.tableView.delegate = self
         self.searchView.tableView.dataSource = self
@@ -106,6 +108,10 @@ extension SearchViewController: UISearchBarDelegate {
             return
         }
         self.presenter.viewDidSearch(with: query)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        <#code#>
     }
 }
 
