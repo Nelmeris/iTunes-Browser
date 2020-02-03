@@ -42,9 +42,16 @@ class AppDetailWhatsNewViewController: UIViewController {
     // MARK: - Private
     
     private func fillData() {
-        self.appDetailWhatsNewView.versionLabel.text = "Версия ..."
-        self.appDetailWhatsNewView.updateDaysPassedLabel.text = "6 дней назад"
-        self.appDetailWhatsNewView.updateDescriptionLabel.text = "..."
+        guard let app = app else { return }
+        self.appDetailWhatsNewView.versionLabel.text = "Версия \(app.version)"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        if let date = dateFormatter.date(from: app.updateDate) {
+            let calendar = Calendar.current
+            let components = calendar.dateComponents([.day], from: date, to: Date())
+            self.appDetailWhatsNewView.updateDaysPassedLabel.text = "\(components.day ?? 0) дней назад"
+        }
+        self.appDetailWhatsNewView.updateDescriptionLabel.text = app.appDescription
     }
     
 }

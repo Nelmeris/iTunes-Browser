@@ -49,9 +49,9 @@ class AppDetailWhatsNewView : UIView {
     private(set) lazy var updateDescriptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 14.0)
+        label.font = UIFont.systemFont(ofSize: 14.0)
         label.textColor = .black
-        label.numberOfLines = 2
+        label.numberOfLines = 3
         return label
     }()
     
@@ -85,7 +85,7 @@ class AppDetailWhatsNewView : UIView {
             self.versionHistoryButton.bottomAnchor.constraint(equalTo: self.titleLabel.bottomAnchor),
             
             self.versionLabel.leftAnchor.constraint(equalTo: self.titleLabel.leftAnchor),
-            self.versionLabel.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 20.0),
+            self.versionLabel.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 16.0),
             
             self.updateDaysPassedLabel.centerYAnchor.constraint(equalTo: self.versionLabel.centerYAnchor),
             self.updateDaysPassedLabel.rightAnchor.constraint(equalTo: self.versionHistoryButton.rightAnchor),
