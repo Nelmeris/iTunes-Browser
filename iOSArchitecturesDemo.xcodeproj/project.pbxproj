@@ -113,6 +113,26 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		57F3568E23E7B25B005283F7 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E0E1D2ED2035AA980011E01A /* AppDelegate */,
+				57F3568F23E7B267005283F7 /* BusinessLogic */,
+				F8A1E0412248517B00FE6448 /* Model */,
+				E0E1D2A52034A3560011E01A /* Flows */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		57F3568F23E7B267005283F7 /* BusinessLogic */ = {
+			isa = PBXGroup;
+			children = (
+				E0E1D359203ADCE10011E01A /* NetworkManager */,
+				F8A1E0402248511B00FE6448 /* Services */,
+			);
+			path = BusinessLogic;
+			sourceTree = "<group>";
+		};
 		DB95456C2F2DCD400ABCE8E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,9 +162,8 @@
 		E0E1D2912034A3350011E01A /* iOSArchitecturesDemo */ = {
 			isa = PBXGroup;
 			children = (
+				57F3568E23E7B25B005283F7 /* App */,
 				F8A1E03D224850CA00FE6448 /* Core */,
-				F8A1E0412248517B00FE6448 /* Model */,
-				E0E1D2A52034A3560011E01A /* Flows */,
 				E0E1D382203AE3140011E01A /* SupportingFiles */,
 			);
 			path = iOSArchitecturesDemo;
@@ -153,8 +172,8 @@
 		E0E1D2A52034A3560011E01A /* Flows */ = {
 			isa = PBXGroup;
 			children = (
-				E0E1D2A62034A36C0011E01A /* Search */,
 				E0E1D2A72034A3780011E01A /* AppDetail */,
+				E0E1D2A62034A36C0011E01A /* Search */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -206,31 +225,6 @@
 			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
-		E0E1D385203AE3E00011E01A /* AppStartManager */ = {
-			isa = PBXGroup;
-			children = (
-				E0E1D383203AE3620011E01A /* AppStartManager.swift */,
-			);
-			path = AppStartManager;
-			sourceTree = "<group>";
-		};
-		E0E1D393203AE5AA0011E01A /* iTunesSearchService */ = {
-			isa = PBXGroup;
-			children = (
-				E0E1D391203AE58B0011E01A /* ITunesSearchService.swift */,
-				E0E1D394203AE5E20011E01A /* ITunesSearchResult.swift */,
-			);
-			path = iTunesSearchService;
-			sourceTree = "<group>";
-		};
-		E0E1D39D203AE7230011E01A /* ImageDownloader */ = {
-			isa = PBXGroup;
-			children = (
-				E0E1D39E203AE7400011E01A /* ImageDownloader.swift */,
-			);
-			path = ImageDownloader;
-			sourceTree = "<group>";
-		};
 		E0E1D3D2203C4A850011E01A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,21 +259,10 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		F8114FC622A3E8DF00102830 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				E0E1D398203AE62E0011E01A /* ITunesApp.swift */,
-				E0E1D39B203AE6420011E01A /* ITunesSong.swift */,
-			);
-			path = Entities;
-			sourceTree = "<group>";
-		};
 		F8A1E03D224850CA00FE6448 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				E0E1D2ED2035AA980011E01A /* AppDelegate */,
 				F8A1E03E224850E500FE6448 /* Monads */,
-				E0E1D359203ADCE10011E01A /* NetworkManager */,
 				E0E1D3D2203C4A850011E01A /* Extensions */,
 			);
 			path = Core;
@@ -296,9 +279,9 @@
 		F8A1E0402248511B00FE6448 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				E0E1D385203AE3E00011E01A /* AppStartManager */,
-				E0E1D393203AE5AA0011E01A /* iTunesSearchService */,
-				E0E1D39D203AE7230011E01A /* ImageDownloader */,
+				E0E1D383203AE3620011E01A /* AppStartManager.swift */,
+				E0E1D391203AE58B0011E01A /* ITunesSearchService.swift */,
+				E0E1D39E203AE7400011E01A /* ImageDownloader.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -306,8 +289,9 @@
 		F8A1E0412248517B00FE6448 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F8A1E0402248511B00FE6448 /* Services */,
-				F8114FC622A3E8DF00102830 /* Entities */,
+				E0E1D398203AE62E0011E01A /* ITunesApp.swift */,
+				E0E1D39B203AE6420011E01A /* ITunesSong.swift */,
+				E0E1D394203AE5E20011E01A /* ITunesSearchResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
