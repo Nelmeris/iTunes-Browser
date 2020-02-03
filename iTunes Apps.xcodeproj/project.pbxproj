@@ -39,7 +39,7 @@
 		8BE349225151AE13B1EDE333 /* Pods-iOSArchitecturesDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSArchitecturesDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSArchitecturesDemo/Pods-iOSArchitecturesDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		8EEA6AF9F424A0D5873D2723 /* Pods_iOSArchitecturesDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSArchitecturesDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A067E149D296BC0C249FD11F /* Pods-iOSArchitecturesDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSArchitecturesDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSArchitecturesDemo/Pods-iOSArchitecturesDemo.release.xcconfig"; sourceTree = "<group>"; };
-		E0E1D28F2034A3350011E01A /* iOSArchitecturesDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSArchitecturesDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0E1D28F2034A3350011E01A /* iTunes Apps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iTunes Apps.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0E1D2922034A3350011E01A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0E1D2942034A3350011E01A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		E0E1D2992034A3350011E01A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -144,7 +144,7 @@
 		E0E1D2862034A3350011E01A = {
 			isa = PBXGroup;
 			children = (
-				E0E1D2912034A3350011E01A /* iOSArchitecturesDemo */,
+				E0E1D2912034A3350011E01A /* iTunes Apps */,
 				E0E1D2902034A3350011E01A /* Products */,
 				3E03DA2743EDF39A6844C510 /* Pods */,
 				DB95456C2F2DCD400ABCE8E9 /* Frameworks */,
@@ -154,19 +154,19 @@
 		E0E1D2902034A3350011E01A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E0E1D28F2034A3350011E01A /* iOSArchitecturesDemo.app */,
+				E0E1D28F2034A3350011E01A /* iTunes Apps.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E0E1D2912034A3350011E01A /* iOSArchitecturesDemo */ = {
+		E0E1D2912034A3350011E01A /* iTunes Apps */ = {
 			isa = PBXGroup;
 			children = (
 				57F3568E23E7B25B005283F7 /* App */,
 				F8A1E03D224850CA00FE6448 /* Core */,
 				E0E1D382203AE3140011E01A /* SupportingFiles */,
 			);
-			path = iOSArchitecturesDemo;
+			path = "iTunes Apps";
 			sourceTree = "<group>";
 		};
 		E0E1D2A52034A3560011E01A /* Flows */ = {
@@ -308,9 +308,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E0E1D28E2034A3350011E01A /* iOSArchitecturesDemo */ = {
+		E0E1D28E2034A3350011E01A /* iTunes Apps */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E0E1D2A12034A3350011E01A /* Build configuration list for PBXNativeTarget "iOSArchitecturesDemo" */;
+			buildConfigurationList = E0E1D2A12034A3350011E01A /* Build configuration list for PBXNativeTarget "iTunes Apps" */;
 			buildPhases = (
 				6E3418D2380D33296AFD4E44 /* [CP] Check Pods Manifest.lock */,
 				E0E1D28B2034A3350011E01A /* Sources */,
@@ -323,9 +323,9 @@
 			);
 			dependencies = (
 			);
-			name = iOSArchitecturesDemo;
+			name = "iTunes Apps";
 			productName = iOSArchitecturesDemo;
-			productReference = E0E1D28F2034A3350011E01A /* iOSArchitecturesDemo.app */;
+			productReference = E0E1D28F2034A3350011E01A /* iTunes Apps.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -345,7 +345,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E0E1D28A2034A3350011E01A /* Build configuration list for PBXProject "iOSArchitecturesDemo" */;
+			buildConfigurationList = E0E1D28A2034A3350011E01A /* Build configuration list for PBXProject "iTunes Apps" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -358,7 +358,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E0E1D28E2034A3350011E01A /* iOSArchitecturesDemo */,
+				E0E1D28E2034A3350011E01A /* iTunes Apps */,
 			);
 		};
 /* End PBXProject section */
@@ -588,12 +588,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "$(SRCROOT)/iOSArchitecturesDemo/SupportingFiles/Info.plist";
+				DEVELOPMENT_TEAM = YX6VKW92JQ;
+				INFOPLIST_FILE = "$(SRCROOT)/iTunes Apps/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ekireev.iOSArchitecturesDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = "artemkufaev.iTunes-Apps";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -603,19 +604,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "$(SRCROOT)/iOSArchitecturesDemo/SupportingFiles/Info.plist";
+				DEVELOPMENT_TEAM = YX6VKW92JQ;
+				INFOPLIST_FILE = "$(SRCROOT)/iTunes Apps/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ekireev.iOSArchitecturesDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = "artemkufaev.iTunes-Apps";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E0E1D28A2034A3350011E01A /* Build configuration list for PBXProject "iOSArchitecturesDemo" */ = {
+		E0E1D28A2034A3350011E01A /* Build configuration list for PBXProject "iTunes Apps" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E0E1D29F2034A3350011E01A /* Debug */,
@@ -624,7 +626,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E0E1D2A12034A3350011E01A /* Build configuration list for PBXNativeTarget "iOSArchitecturesDemo" */ = {
+		E0E1D2A12034A3350011E01A /* Build configuration list for PBXNativeTarget "iTunes Apps" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E0E1D2A22034A3350011E01A /* Debug */,
