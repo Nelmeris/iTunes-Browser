@@ -13,6 +13,7 @@ final class SearchViewController: UIViewController {
     // MARK: - Private Properties
     
     private let presenter: SearchViewOutput
+    private var lastQuery: String?
     
     init(presenter: SearchViewOutput) {
         self.presenter = presenter
@@ -28,16 +29,33 @@ final class SearchViewController: UIViewController {
     }
     
     private let searchService = ITunesSearchService()
-    internal var searchResults = [ITunesApp]() {
+    internal var searchAppsResults = [ITunesApp]() {
         didSet {
+            guard searchType == .apps else { return }
             self.searchView.tableView.isHidden = false
             self.searchView.tableView.reloadData()
             self.searchView.searchBar.resignFirstResponder()
         }
     }
+    internal var searchSongsResults = [ITunesSong]() {
+        didSet {
+            guard searchType == .songs else { return }
+            self.searchView.tableView.isHidden = false
+            self.searchView.tableView.reloadData()
+            self.searchView.searchBar.resignFirstResponder()
+        }
+    }
+    internal var searchType: SearchType = .apps {
+        didSet {
+            self.searchView.tableView.reloadData()
+            guard let query = lastQuery else { return }
+            self.presenter.viewDidSearch(with: query)
+        }
+    }
     
     private struct Constants {
-        static let reuseIdentifier = "reuseId"
+        static let reuseAppCellIdentifier = "appReuseId"
+        static let reuseSongCellIdentifier = "songReuseId"
     }
     
     // MARK: - Lifecycle
@@ -53,7 +71,8 @@ final class SearchViewController: UIViewController {
         self.searchView.searchBar.delegate = self
         self.searchView.searchBar.scopeButtonTitles = ["Apps", "Music"]
         self.searchView.searchBar.showsScopeBar = true
-        self.searchView.tableView.register(AppCell.self, forCellReuseIdentifier: Constants.reuseIdentifier)
+        self.searchView.tableView.register(AppCell.self, forCellReuseIdentifier: Constants.reuseAppCellIdentifier)
+        self.searchView.tableView.register(SongCell.self, forCellReuseIdentifier: Constants.reuseSongCellIdentifier)
         self.searchView.tableView.delegate = self
         self.searchView.tableView.dataSource = self
     }
@@ -70,19 +89,45 @@ final class SearchViewController: UIViewController {
 extension SearchViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchResults.count
+        switch searchType {
+        case .apps:
+            return searchAppsResults.count
+        case .songs:
+            return searchSongsResults.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: Constants.reuseIdentifier, for: indexPath)
+        switch searchType {
+        case .apps:
+            return makeAppCell(for: tableView, on: indexPath)
+        case .songs:
+            return makeSongCell(for: tableView, on: indexPath)
+        }
+    }
+    
+    private func makeAppCell(for tableView: UITableView, on indexPath: IndexPath) -> UITableViewCell {
+        let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: Constants.reuseAppCellIdentifier, for: indexPath)
         guard let cell = dequeuedCell as? AppCell else {
             return dequeuedCell
         }
-        let app = self.searchResults[indexPath.row]
+        let app = self.searchAppsResults[indexPath.row]
         let cellModel = AppCellModelFactory.cellModel(from: app)
         cell.configure(with: cellModel)
         return cell
     }
+    
+    private func makeSongCell(for tableView: UITableView, on indexPath: IndexPath) -> UITableViewCell {
+        let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: Constants.reuseSongCellIdentifier, for: indexPath)
+        guard let cell = dequeuedCell as? SongCell else {
+            return dequeuedCell
+        }
+        let song = self.searchSongsResults[indexPath.row]
+        let cellModel = SongCellModelFactory.cellModel(from: song)
+        cell.configure(with: cellModel)
+        return cell
+    }
+    
 }
 
 //MARK: - UITableViewDelegate
@@ -90,8 +135,14 @@ extension SearchViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let app = searchResults[indexPath.row]
-        self.presenter.viewDidSelectApp(app)
+        switch searchType {
+        case .apps:
+            let app = searchAppsResults[indexPath.row]
+            self.presenter.viewDidSelectApp(app)
+        case .songs:
+            let song = searchSongsResults[indexPath.row]
+            self.presenter.viewDidSelectSong(song)
+        }
     }
 }
 
@@ -107,11 +158,12 @@ extension SearchViewController: UISearchBarDelegate {
             searchBar.resignFirstResponder()
             return
         }
+        self.lastQuery = query
         self.presenter.viewDidSearch(with: query)
     }
     
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-        <#code#>
+        self.presenter.viewDidSelectSearchScope(selectedScope)
     }
 }
 

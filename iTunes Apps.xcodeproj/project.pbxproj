@@ -13,6 +13,8 @@
 		0797D69923DF66E700BB891D /* SearchModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0797D69823DF66E700BB891D /* SearchModuleBuilder.swift */; };
 		57BACBD723E8292B00167217 /* AppDetailWhatsNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACBD623E8292B00167217 /* AppDetailWhatsNewView.swift */; };
 		57BACBD923E8311D00167217 /* AppDetailWhatsNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACBD823E8311D00167217 /* AppDetailWhatsNewViewController.swift */; };
+		57BACBDB23E851B400167217 /* SongCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACBDA23E851B400167217 /* SongCellModel.swift */; };
+		57BACBDD23E8529300167217 /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACBDC23E8529300167217 /* SongCell.swift */; };
 		C85324B601590DACE4340881 /* Pods_iTunes_Apps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32C886157CD778F008BF071A /* Pods_iTunes_Apps.framework */; };
 		E0E1D2932034A3350011E01A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E1D2922034A3350011E01A /* AppDelegate.swift */; };
 		E0E1D2952034A3350011E01A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E1D2942034A3350011E01A /* SearchViewController.swift */; };
@@ -44,6 +46,8 @@
 		3C612C5E49B35F9D1C2C9552 /* Pods-iTunes Apps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunes Apps.release.xcconfig"; path = "Pods/Target Support Files/Pods-iTunes Apps/Pods-iTunes Apps.release.xcconfig"; sourceTree = "<group>"; };
 		57BACBD623E8292B00167217 /* AppDetailWhatsNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailWhatsNewView.swift; sourceTree = "<group>"; };
 		57BACBD823E8311D00167217 /* AppDetailWhatsNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailWhatsNewViewController.swift; sourceTree = "<group>"; };
+		57BACBDA23E851B400167217 /* SongCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCellModel.swift; sourceTree = "<group>"; };
+		57BACBDC23E8529300167217 /* SongCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCell.swift; sourceTree = "<group>"; };
 		8BE349225151AE13B1EDE333 /* Pods-iOSArchitecturesDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSArchitecturesDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSArchitecturesDemo/Pods-iOSArchitecturesDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		8EEA6AF9F424A0D5873D2723 /* Pods_iOSArchitecturesDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSArchitecturesDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A067E149D296BC0C249FD11F /* Pods-iOSArchitecturesDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSArchitecturesDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSArchitecturesDemo/Pods-iOSArchitecturesDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -252,6 +256,7 @@
 			children = (
 				E0E1D2942034A3350011E01A /* SearchViewController.swift */,
 				F8114FC022A3E5EE00102830 /* AppCellModel.swift */,
+				57BACBDA23E851B400167217 /* SongCellModel.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -315,6 +320,7 @@
 			children = (
 				F8114FBD22A3DBF400102830 /* SearchView.swift */,
 				F8A97B342249898E00FB2C0E /* AppCell.swift */,
+				57BACBDC23E8529300167217 /* SongCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -439,6 +445,7 @@
 				E0E1D387203AE45F0011E01A /* WebRequest.swift in Sources */,
 				0797D69623DF614600BB891D /* SearchPresenter.swift in Sources */,
 				F8A1E03C2248382F00FE6448 /* Monads.swift in Sources */,
+				57BACBDB23E851B400167217 /* SongCellModel.swift in Sources */,
 				E0E1D3D4203C4AA50011E01A /* UIColor+Extensions.swift in Sources */,
 				E0E1D3D1203C48D70011E01A /* AppDetailViewController.swift in Sources */,
 				E0E1D358203ADC590011E01A /* NetworkManager.swift in Sources */,
@@ -447,6 +454,7 @@
 				E0E1D39F203AE7400011E01A /* ImageDownloader.swift in Sources */,
 				F8114FBE22A3DBF400102830 /* SearchView.swift in Sources */,
 				E0E1D395203AE5E20011E01A /* ITunesSearchResult.swift in Sources */,
+				57BACBDD23E8529300167217 /* SongCell.swift in Sources */,
 				E0E1D392203AE58B0011E01A /* ITunesSearchService.swift in Sources */,
 				E0E1D2932034A3350011E01A /* AppDelegate.swift in Sources */,
 				57BACBD723E8292B00167217 /* AppDetailWhatsNewView.swift in Sources */,
