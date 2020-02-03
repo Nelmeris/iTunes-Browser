@@ -14,6 +14,7 @@ final class AppDetailViewController: UIViewController {
     
     
     var headerViewController: AppDetailHeaderViewController!
+    var whatsNewViewController: AppDetailWhatsNewViewController!
     
     private let imageDownloader = ImageDownloader()
     
@@ -27,8 +28,10 @@ final class AppDetailViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         headerViewController = AppDetailHeaderViewController(app: self.app!)
+        whatsNewViewController = AppDetailWhatsNewViewController(app: self.app!)
         self.configureNavigationController()
         self.addHeaderViewController()
+        self.addWhatsNewViewController()
     }
     
     // MARK: - Private
@@ -49,5 +52,18 @@ final class AppDetailViewController: UIViewController {
             self.headerViewController.view.leftAnchor.constraint(equalTo: self.view.leftAnchor),
             self.headerViewController.view.rightAnchor.constraint(equalTo: self.view.rightAnchor)
             ])
+    }
+    
+    private func addWhatsNewViewController() {
+        self.addChild(self.whatsNewViewController)
+        self.view.addSubview(self.whatsNewViewController.view)
+        self.whatsNewViewController.didMove(toParent: self)
+        
+        self.whatsNewViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.whatsNewViewController.view.topAnchor.constraint(equalTo: self.headerViewController.view.bottomAnchor),
+            self.whatsNewViewController.view.leftAnchor.constraint(equalTo: self.view.leftAnchor),
+            self.whatsNewViewController.view.rightAnchor.constraint(equalTo: self.view.rightAnchor)
+        ])
     }
 }
