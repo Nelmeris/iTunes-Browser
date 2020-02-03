@@ -11,7 +11,9 @@ import UIKit
 
 protocol SearchViewInput: class {
     
-    var searchResults: [ITunesApp] { get set }
+    var searchAppsResults: [ITunesApp] { get set }
+    var searchSongsResults: [ITunesSong] { get set }
+    var searchType: SearchType { get set }
     
     func showError(error: Error)
     
@@ -24,10 +26,18 @@ protocol SearchViewInput: class {
 
 
 protocol SearchViewOutput: class {
-    
     func viewDidSearch(with query: String)
     
     func viewDidSelectApp(_ app: ITunesApp)
+    func viewDidSelectSong(_ song: ITunesSong)
+    
+    func viewDidSelectSearchScope(_ selectedScope: Int)
+}
+
+
+enum SearchType: Int {
+    case apps
+    case songs
 }
 
 
@@ -48,7 +58,26 @@ class SearchPresenter {
                         return
                     }
                     self.viewInput?.hideNoResults()
-                    self.viewInput?.searchResults = apps
+                    self.viewInput?.searchAppsResults = apps
+                }
+                .withError {
+                    self.viewInput?.showError(error: $0)
+                }
+        }
+    }
+    
+    private func requestSongs(with query: String) {
+        self.searchService.getSongs(forQuery: query) { [weak self] result in
+            guard let self = self else { return }
+            self.viewInput?.throbber(show: false)
+            result
+                .withValue { songs in
+                    guard !songs.isEmpty else {
+                        self.viewInput?.showNoResults()
+                        return
+                    }
+                    self.viewInput?.hideNoResults()
+                    self.viewInput?.searchSongsResults = songs
                 }
                 .withError {
                     self.viewInput?.showError(error: $0)
@@ -59,19 +88,38 @@ class SearchPresenter {
     private func openAppDetails(with app: ITunesApp) {
         let appDetaillViewController = AppDetailViewController()
         appDetaillViewController.app = app
-    self.viewInput?.navigationController?.pushViewController(appDetaillViewController, animated: true)
+        self.viewInput?.navigationController?.pushViewController(appDetaillViewController, animated: true)
     }
+    
+    private func openSongDetails(with song: ITunesSong) {
+        // TODO
+    }
+    
 }
 
 extension SearchPresenter: SearchViewOutput {
 
     func viewDidSearch(with query: String) {
         self.viewInput?.throbber(show: true)
-        self.requestApps(with: query)
+        guard let type = self.viewInput?.searchType else { return }
+        switch type {
+        case .apps:
+            self.requestApps(with: query)
+        case .songs:
+            self.requestSongs(with: query)
+        }
     }
 
     func viewDidSelectApp(_ app: ITunesApp) {
         self.openAppDetails(with: app)
+    }
+    
+    func viewDidSelectSong(_ song: ITunesSong) {
+        self.openSongDetails(with: song)
+    }
+    
+    func viewDidSelectSearchScope(_ selectedScope: Int) {
+        self.viewInput?.searchType = SearchType(rawValue: selectedScope)!
     }
 
 }

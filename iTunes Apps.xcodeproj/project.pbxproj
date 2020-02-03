@@ -11,6 +11,11 @@
 		0797D69323DF560E00BB891D /* AppDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0797D69223DF560E00BB891D /* AppDetailHeaderView.swift */; };
 		0797D69623DF614600BB891D /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0797D69523DF614600BB891D /* SearchPresenter.swift */; };
 		0797D69923DF66E700BB891D /* SearchModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0797D69823DF66E700BB891D /* SearchModuleBuilder.swift */; };
+		57BACBD723E8292B00167217 /* AppDetailWhatsNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACBD623E8292B00167217 /* AppDetailWhatsNewView.swift */; };
+		57BACBD923E8311D00167217 /* AppDetailWhatsNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACBD823E8311D00167217 /* AppDetailWhatsNewViewController.swift */; };
+		57BACBDB23E851B400167217 /* SongCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACBDA23E851B400167217 /* SongCellModel.swift */; };
+		57BACBDD23E8529300167217 /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACBDC23E8529300167217 /* SongCell.swift */; };
+		C85324B601590DACE4340881 /* Pods_iTunes_Apps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32C886157CD778F008BF071A /* Pods_iTunes_Apps.framework */; };
 		E0E1D2932034A3350011E01A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E1D2922034A3350011E01A /* AppDelegate.swift */; };
 		E0E1D2952034A3350011E01A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E1D2942034A3350011E01A /* SearchViewController.swift */; };
 		E0E1D29A2034A3350011E01A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0E1D2992034A3350011E01A /* Assets.xcassets */; };
@@ -36,6 +41,13 @@
 		0797D69223DF560E00BB891D /* AppDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailHeaderView.swift; sourceTree = "<group>"; };
 		0797D69523DF614600BB891D /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		0797D69823DF66E700BB891D /* SearchModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModuleBuilder.swift; sourceTree = "<group>"; };
+		108FE8211C5219D9C3BA482D /* Pods-iTunes Apps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunes Apps.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iTunes Apps/Pods-iTunes Apps.debug.xcconfig"; sourceTree = "<group>"; };
+		32C886157CD778F008BF071A /* Pods_iTunes_Apps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iTunes_Apps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C612C5E49B35F9D1C2C9552 /* Pods-iTunes Apps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunes Apps.release.xcconfig"; path = "Pods/Target Support Files/Pods-iTunes Apps/Pods-iTunes Apps.release.xcconfig"; sourceTree = "<group>"; };
+		57BACBD623E8292B00167217 /* AppDetailWhatsNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailWhatsNewView.swift; sourceTree = "<group>"; };
+		57BACBD823E8311D00167217 /* AppDetailWhatsNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailWhatsNewViewController.swift; sourceTree = "<group>"; };
+		57BACBDA23E851B400167217 /* SongCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCellModel.swift; sourceTree = "<group>"; };
+		57BACBDC23E8529300167217 /* SongCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCell.swift; sourceTree = "<group>"; };
 		8BE349225151AE13B1EDE333 /* Pods-iOSArchitecturesDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSArchitecturesDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSArchitecturesDemo/Pods-iOSArchitecturesDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		8EEA6AF9F424A0D5873D2723 /* Pods_iOSArchitecturesDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSArchitecturesDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A067E149D296BC0C249FD11F /* Pods-iOSArchitecturesDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSArchitecturesDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSArchitecturesDemo/Pods-iOSArchitecturesDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -66,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C85324B601590DACE4340881 /* Pods_iTunes_Apps.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				0797D68F23DF555100BB891D /* AppDetailHeaderViewController.swift */,
+				57BACBD823E8311D00167217 /* AppDetailWhatsNewViewController.swift */,
 			);
 			path = Parts;
 			sourceTree = "<group>";
@@ -84,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				0797D69223DF560E00BB891D /* AppDetailHeaderView.swift */,
+				57BACBD623E8292B00167217 /* AppDetailWhatsNewView.swift */,
 			);
 			path = Parts;
 			sourceTree = "<group>";
@@ -109,6 +124,8 @@
 			children = (
 				8BE349225151AE13B1EDE333 /* Pods-iOSArchitecturesDemo.debug.xcconfig */,
 				A067E149D296BC0C249FD11F /* Pods-iOSArchitecturesDemo.release.xcconfig */,
+				108FE8211C5219D9C3BA482D /* Pods-iTunes Apps.debug.xcconfig */,
+				3C612C5E49B35F9D1C2C9552 /* Pods-iTunes Apps.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -137,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				8EEA6AF9F424A0D5873D2723 /* Pods_iOSArchitecturesDemo.framework */,
+				32C886157CD778F008BF071A /* Pods_iTunes_Apps.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -238,6 +256,7 @@
 			children = (
 				E0E1D2942034A3350011E01A /* SearchViewController.swift */,
 				F8114FC022A3E5EE00102830 /* AppCellModel.swift */,
+				57BACBDA23E851B400167217 /* SongCellModel.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -301,6 +320,7 @@
 			children = (
 				F8114FBD22A3DBF400102830 /* SearchView.swift */,
 				F8A97B342249898E00FB2C0E /* AppCell.swift */,
+				57BACBDC23E8529300167217 /* SongCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -317,7 +337,6 @@
 				E0E1D28C2034A3350011E01A /* Frameworks */,
 				E0E1D28D2034A3350011E01A /* Resources */,
 				AB02F942E5030AFDC6F773AD /* [CP] Embed Pods Frameworks */,
-				9027B805BDF4729092DBF0B2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -387,26 +406,11 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-iOSArchitecturesDemo-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-iTunes Apps-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9027B805BDF4729092DBF0B2 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOSArchitecturesDemo/Pods-iOSArchitecturesDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AB02F942E5030AFDC6F773AD /* [CP] Embed Pods Frameworks */ = {
@@ -415,7 +419,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-iOSArchitecturesDemo/Pods-iOSArchitecturesDemo-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-iTunes Apps/Pods-iTunes Apps-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -424,7 +428,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOSArchitecturesDemo/Pods-iOSArchitecturesDemo-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iTunes Apps/Pods-iTunes Apps-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -441,6 +445,7 @@
 				E0E1D387203AE45F0011E01A /* WebRequest.swift in Sources */,
 				0797D69623DF614600BB891D /* SearchPresenter.swift in Sources */,
 				F8A1E03C2248382F00FE6448 /* Monads.swift in Sources */,
+				57BACBDB23E851B400167217 /* SongCellModel.swift in Sources */,
 				E0E1D3D4203C4AA50011E01A /* UIColor+Extensions.swift in Sources */,
 				E0E1D3D1203C48D70011E01A /* AppDetailViewController.swift in Sources */,
 				E0E1D358203ADC590011E01A /* NetworkManager.swift in Sources */,
@@ -449,8 +454,11 @@
 				E0E1D39F203AE7400011E01A /* ImageDownloader.swift in Sources */,
 				F8114FBE22A3DBF400102830 /* SearchView.swift in Sources */,
 				E0E1D395203AE5E20011E01A /* ITunesSearchResult.swift in Sources */,
+				57BACBDD23E8529300167217 /* SongCell.swift in Sources */,
 				E0E1D392203AE58B0011E01A /* ITunesSearchService.swift in Sources */,
 				E0E1D2932034A3350011E01A /* AppDelegate.swift in Sources */,
+				57BACBD723E8292B00167217 /* AppDetailWhatsNewView.swift in Sources */,
+				57BACBD923E8311D00167217 /* AppDetailWhatsNewViewController.swift in Sources */,
 				E0E1D384203AE3620011E01A /* AppStartManager.swift in Sources */,
 				F8114FC122A3E5EE00102830 /* AppCellModel.swift in Sources */,
 				0797D69923DF66E700BB891D /* SearchModuleBuilder.swift in Sources */,
@@ -584,7 +592,7 @@
 		};
 		E0E1D2A22034A3350011E01A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8BE349225151AE13B1EDE333 /* Pods-iOSArchitecturesDemo.debug.xcconfig */;
+			baseConfigurationReference = 108FE8211C5219D9C3BA482D /* Pods-iTunes Apps.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -600,7 +608,7 @@
 		};
 		E0E1D2A32034A3350011E01A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A067E149D296BC0C249FD11F /* Pods-iOSArchitecturesDemo.release.xcconfig */;
+			baseConfigurationReference = 3C612C5E49B35F9D1C2C9552 /* Pods-iTunes Apps.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
