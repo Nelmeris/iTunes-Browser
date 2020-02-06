@@ -8,7 +8,12 @@
 
 import Alamofire
 
-final class ITunesSearchService {
+protocol SearchServiceInterface {
+    func getApps(forQuery query: String, then completion: ITunesSearchService.CompletionApps?)
+    func getSongs(forQuery query: String, completion: ITunesSearchService.CompletionSongs?)
+}
+
+final class ITunesSearchService: SearchServiceInterface {
     
     public typealias CompletionApps = (Result<[ITunesApp]>) -> Void
     public typealias CompletionSongs = (Result<[ITunesSong]>) -> Void

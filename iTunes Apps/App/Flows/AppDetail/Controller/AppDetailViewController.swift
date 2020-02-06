@@ -10,13 +10,21 @@ import UIKit
 
 final class AppDetailViewController: UIViewController {
     
-    public var app: ITunesApp?
-    
+    public var app: ITunesApp
     
     var headerViewController: AppDetailHeaderViewController!
     var whatsNewViewController: AppDetailWhatsNewViewController!
     
     private let imageDownloader = ImageDownloader()
+    
+    init(app: ITunesApp) {
+        self.app = app
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - Lifecycle
     
@@ -27,8 +35,8 @@ final class AppDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
-        headerViewController = AppDetailHeaderViewController(app: self.app!)
-        whatsNewViewController = AppDetailWhatsNewViewController(app: self.app!)
+        headerViewController = AppDetailHeaderViewController(app: self.app)
+        whatsNewViewController = AppDetailWhatsNewViewController(app: self.app)
         self.configureNavigationController()
         self.addHeaderViewController()
         self.addWhatsNewViewController()

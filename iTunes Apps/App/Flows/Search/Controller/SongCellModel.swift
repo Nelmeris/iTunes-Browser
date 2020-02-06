@@ -16,7 +16,7 @@ struct SongCellModel {
 
 final class SongCellModelFactory {
     
-    static func cellModel(from model: ITunesSong) -> SongCellModel {
+    static func cellModel(from model: SongCellModel) -> SongCellModel {
         return SongCellModel(trackName: model.trackName, artistName: model.artistName, collectionName: model.collectionName)
     }
 }

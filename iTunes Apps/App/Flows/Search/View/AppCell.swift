@@ -51,9 +51,9 @@ final class AppCell: UITableViewCell {
     // MARK: - Methods
     
     func configure(with cellModel: AppCellModel) {
-        self.titleLabel.text = cellModel.title
-        self.subtitleLabel.text = cellModel.subtitle
-        self.ratingLabel.text = cellModel.rating
+        self.titleLabel.text = cellModel.appName
+        self.subtitleLabel.text = cellModel.company
+        self.ratingLabel.text = String(cellModel.averageRating ?? 0)
     }
     
     // MARK: - UI

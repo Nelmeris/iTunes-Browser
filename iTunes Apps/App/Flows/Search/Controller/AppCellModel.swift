@@ -9,16 +9,18 @@
 import Foundation
 
 struct AppCellModel {
-    let title: String
-    let subtitle: String?
-    let rating: String?
+    let appName: String
+    let company: String?
+    let averageRating: Float?
+    let downloadState: DownloadingApp.DownloadState
 }
 
 final class AppCellModelFactory {
     
-    static func cellModel(from model: ITunesApp) -> AppCellModel {
-        return AppCellModel(title: model.appName,
-                            subtitle: model.company,
-                            rating: model.averageRating >>- { "\($0)" })
+    static func cellModel(from model: AppCellModel) -> AppCellModel {
+        return AppCellModel(appName: model.appName,
+                            company: model.company,
+                            averageRating: model.averageRating >>- { $0 },
+                            downloadState: .notStarted)
     }
 }
