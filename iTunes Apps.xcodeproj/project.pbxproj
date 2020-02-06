@@ -11,6 +11,8 @@
 		0797D69323DF560E00BB891D /* AppDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0797D69223DF560E00BB891D /* AppDetailHeaderView.swift */; };
 		0797D69623DF614600BB891D /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0797D69523DF614600BB891D /* SearchPresenter.swift */; };
 		0797D69923DF66E700BB891D /* SearchModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0797D69823DF66E700BB891D /* SearchModuleBuilder.swift */; };
+		578286F623EC73FB00A1848E /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578286F523EC73FB00A1848E /* SearchRouter.swift */; };
+		578286F823EC744200A1848E /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578286F723EC744200A1848E /* SearchInteractor.swift */; };
 		57BACBD723E8292B00167217 /* AppDetailWhatsNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACBD623E8292B00167217 /* AppDetailWhatsNewView.swift */; };
 		57BACBD923E8311D00167217 /* AppDetailWhatsNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACBD823E8311D00167217 /* AppDetailWhatsNewViewController.swift */; };
 		57BACBDB23E851B400167217 /* SongCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BACBDA23E851B400167217 /* SongCellModel.swift */; };
@@ -44,6 +46,8 @@
 		108FE8211C5219D9C3BA482D /* Pods-iTunes Apps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunes Apps.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iTunes Apps/Pods-iTunes Apps.debug.xcconfig"; sourceTree = "<group>"; };
 		32C886157CD778F008BF071A /* Pods_iTunes_Apps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iTunes_Apps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C612C5E49B35F9D1C2C9552 /* Pods-iTunes Apps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunes Apps.release.xcconfig"; path = "Pods/Target Support Files/Pods-iTunes Apps/Pods-iTunes Apps.release.xcconfig"; sourceTree = "<group>"; };
+		578286F523EC73FB00A1848E /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
+		578286F723EC744200A1848E /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
 		57BACBD623E8292B00167217 /* AppDetailWhatsNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailWhatsNewView.swift; sourceTree = "<group>"; };
 		57BACBD823E8311D00167217 /* AppDetailWhatsNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailWhatsNewViewController.swift; sourceTree = "<group>"; };
 		57BACBDA23E851B400167217 /* SongCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCellModel.swift; sourceTree = "<group>"; };
@@ -146,6 +150,8 @@
 			children = (
 				E0E1D359203ADCE10011E01A /* NetworkManager */,
 				F8A1E0402248511B00FE6448 /* Services */,
+				578286F523EC73FB00A1848E /* SearchRouter.swift */,
+				578286F723EC744200A1848E /* SearchInteractor.swift */,
 			);
 			path = BusinessLogic;
 			sourceTree = "<group>";
@@ -439,6 +445,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0E1D399203AE62E0011E01A /* ITunesApp.swift in Sources */,
+				578286F623EC73FB00A1848E /* SearchRouter.swift in Sources */,
 				0797D69323DF560E00BB891D /* AppDetailHeaderView.swift in Sources */,
 				F8A97B352249898E00FB2C0E /* AppCell.swift in Sources */,
 				0797D69023DF555100BB891D /* AppDetailHeaderViewController.swift in Sources */,
@@ -453,6 +460,7 @@
 				E0E1D2952034A3350011E01A /* SearchViewController.swift in Sources */,
 				E0E1D39F203AE7400011E01A /* ImageDownloader.swift in Sources */,
 				F8114FBE22A3DBF400102830 /* SearchView.swift in Sources */,
+				578286F823EC744200A1848E /* SearchInteractor.swift in Sources */,
 				E0E1D395203AE5E20011E01A /* ITunesSearchResult.swift in Sources */,
 				57BACBDD23E8529300167217 /* SongCell.swift in Sources */,
 				E0E1D392203AE58B0011E01A /* ITunesSearchService.swift in Sources */,

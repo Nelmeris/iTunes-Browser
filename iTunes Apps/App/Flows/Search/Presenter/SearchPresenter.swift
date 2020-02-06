@@ -47,6 +47,14 @@ class SearchPresenter {
     
     private let searchService = ITunesSearchService()
     
+    let interactor: SearchInteractorInput
+    let router: SearchRouterInput
+
+    init(interactor: SearchInteractorInput, router: SearchRouterInput) {
+        self.interactor = interactor
+        self.router = router
+    }
+    
     private func requestApps(with query: String) {
         self.searchService.getApps(forQuery: query) { [weak self] result in
             guard let self = self else { return }
@@ -85,16 +93,6 @@ class SearchPresenter {
         }
     }
     
-    private func openAppDetails(with app: ITunesApp) {
-        let appDetaillViewController = AppDetailViewController()
-        appDetaillViewController.app = app
-        self.viewInput?.navigationController?.pushViewController(appDetaillViewController, animated: true)
-    }
-    
-    private func openSongDetails(with song: ITunesSong) {
-        // TODO
-    }
-    
 }
 
 extension SearchPresenter: SearchViewOutput {
@@ -111,11 +109,11 @@ extension SearchPresenter: SearchViewOutput {
     }
 
     func viewDidSelectApp(_ app: ITunesApp) {
-        self.openAppDetails(with: app)
+        self.router.openAppDetails(for: app)
     }
     
     func viewDidSelectSong(_ song: ITunesSong) {
-        self.openSongDetails(with: song)
+        // TODO
     }
     
     func viewDidSelectSearchScope(_ selectedScope: Int) {
