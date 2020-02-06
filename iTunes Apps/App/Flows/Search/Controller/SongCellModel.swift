@@ -13,10 +13,3 @@ struct SongCellModel {
     let artistName: String?
     let collectionName: String?
 }
-
-final class SongCellModelFactory {
-    
-    static func cellModel(from model: SongCellModel) -> SongCellModel {
-        return SongCellModel(trackName: model.trackName, artistName: model.artistName, collectionName: model.collectionName)
-    }
-}

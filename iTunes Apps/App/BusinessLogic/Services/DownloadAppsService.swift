@@ -23,7 +23,7 @@ final class DownloadingApp {
     
     let app: ITunesApp
     
-    var downloadState: DownloadState = .notStarted
+    var downloadState: Observable<DownloadState> = Observable(.notStarted)
     
     init(app: ITunesApp) {
         self.app = app
@@ -54,16 +54,16 @@ final class FakeDownloadAppsService: DownloadAppsServiceInterface {
     
     private func startTimer(for downloadingApp: DownloadingApp) {
         let timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { [weak self] timer in
-            switch downloadingApp.downloadState {
+            switch downloadingApp.downloadState.value {
             case .notStarted:
-                downloadingApp.downloadState = .inProgress(progress: 0.05)
+                downloadingApp.downloadState.value = .inProgress(progress: 0.05)
             case .inProgress(let progress):
                 let newProgress = progress + 0.05
                 if newProgress >= 1 {
-                    downloadingApp.downloadState = .downloaded
+                    downloadingApp.downloadState.value = .downloaded
                     self?.invalidateTimer(timer)
                 } else {
-                    downloadingApp.downloadState = .inProgress(progress: progress + 0.05)
+                    downloadingApp.downloadState.value = .inProgress(progress: progress + 0.05)
                 }
             case .downloaded:
                 self?.invalidateTimer(timer)

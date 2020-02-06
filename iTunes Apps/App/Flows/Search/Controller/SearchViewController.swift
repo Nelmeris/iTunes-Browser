@@ -170,8 +170,10 @@ extension SearchViewController: UITableViewDataSource {
         let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: Constants.reuseAppCellIdentifier, for: indexPath)
         guard let cell = dequeuedCell as? AppCell else { return dequeuedCell }
         let app = self.searchAppResults[indexPath.row]
-        let cellModel = AppCellModelFactory.cellModel(from: app)
-        cell.configure(with: cellModel)
+        cell.configure(with: app)
+        cell.onDownloadButtonType = {
+            self.viewModel.didTapDownloadApp(app)
+        }
         return cell
     }
     
@@ -181,8 +183,7 @@ extension SearchViewController: UITableViewDataSource {
             return dequeuedCell
         }
         let song = self.searchSongResults[indexPath.row]
-        let cellModel = SongCellModelFactory.cellModel(from: song)
-        cell.configure(with: cellModel)
+        cell.configure(with: song)
         return cell
     }
     

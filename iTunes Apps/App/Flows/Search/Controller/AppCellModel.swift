@@ -12,15 +12,5 @@ struct AppCellModel {
     let appName: String
     let company: String?
     let averageRating: Float?
-    let downloadState: DownloadingApp.DownloadState
-}
-
-final class AppCellModelFactory {
-    
-    static func cellModel(from model: AppCellModel) -> AppCellModel {
-        return AppCellModel(appName: model.appName,
-                            company: model.company,
-                            averageRating: model.averageRating >>- { $0 },
-                            downloadState: .notStarted)
-    }
+    let downloadState: Observable<DownloadingApp.DownloadState>
 }

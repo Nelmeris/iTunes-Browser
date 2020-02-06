@@ -122,7 +122,7 @@ final class SearchViewModel {
             return AppCellModel(appName: app.appName,
                                       company: app.company,
                                       averageRating: app.averageRating,
-                                      downloadState: downloadingApp?.downloadState ?? .notStarted)
+                                      downloadState: downloadingApp?.downloadState ?? Observable(.notStarted))
         }
     }
     
