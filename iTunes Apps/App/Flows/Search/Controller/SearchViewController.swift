@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 final class SearchViewController: UIViewController {
     
@@ -75,6 +76,7 @@ final class SearchViewController: UIViewController {
         self.searchView.tableView.register(SongCell.self, forCellReuseIdentifier: Constants.reuseSongCellIdentifier)
         self.searchView.tableView.delegate = self
         self.searchView.tableView.dataSource = self
+        self.searchAppsResults.r
     }
     
     override func viewWillDisappear(_ animated: Bool) {

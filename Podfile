@@ -7,5 +7,6 @@ target 'iTunes Apps' do
 
   # Pods for iTunes Apps
   pod 'Alamofire', '~> 4.6'
+  pod 'RxSwift'
 
 end

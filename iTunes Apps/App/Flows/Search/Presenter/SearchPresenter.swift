@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 protocol SearchViewInput: class {
     
     var searchAppsResults: [ITunesApp] { get set }
